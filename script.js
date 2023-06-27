@@ -20,21 +20,16 @@ function make_piece(piece, color, cell) {
     let p = document.createElement("img");
     p.src = "./img/pieces/Chess_"+ piece + color + "t45.svg";
     p.className = "piece";
+    p.setAttribute("draggable", "true");
     document.getElementById(cell).append(p);
 }
 
 function make_black_pawn(cell) {
-    let p = document.createElement("img");
-    p.src = "./img/pieces/Chess_pdt45.svg";
-    p.className = "piece";
-    document.getElementById(cell).append(p);
+    make_piece("p", "d", cell);
 }
 
 function make_white_pawn(cell) {
-    let p = document.createElement("img");
-    p.src = "./img/pieces/Chess_plt45.svg";
-    p.className = "piece";
-    document.getElementById(cell).append(p);
+    make_piece("p", "l", cell);
 }
 
 // add black pawns
