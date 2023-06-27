@@ -6,4 +6,3 @@ for (let i = 0; i < 64; i++) {
     cell.id = i;
     chessboard.append(cell);
 }
-
