@@ -1,3 +1,19 @@
+// event listeners
+function allowDrop(ev) {
+    ev.preventDefault();
+  }
+
+function drag(e) {
+    e.dataTransfer.setData("text", e.target.id);
+}
+
+function drop(e) {
+    e.preventDefault();
+    let data = e.dataTransfer.getData("text");
+    e.target.appendChild(document.getElementById(data));
+}
+
+
 const chessboard = document.getElementById("chessboard");
 
 for (let i = 0; i < 64; i++) {
@@ -11,6 +27,9 @@ for (let i = 0; i < 64; i++) {
         cell.classList.add("black");
     }
 
+    cell.setAttribute("ondrop", "drop(event)");
+    cell.setAttribute("ondragover", "allowDrop(event)");
+
     chessboard.append(cell);
 }
 
@@ -21,6 +40,10 @@ function make_piece(piece, color, cell) {
     p.src = "./img/pieces/Chess_"+ piece + color + "t45.svg";
     p.className = "piece";
     p.setAttribute("draggable", "true");
+    p.id = piece+color+cell;
+
+    p.setAttribute("ondragstart", "drag(event)");
+
     document.getElementById(cell).append(p);
 }
 
@@ -59,3 +82,4 @@ make_piece("k", "l", 60);
 make_piece("b", "l", 61);
 make_piece("n", "l", 62);
 make_piece("r", "l", 63);
+
