@@ -1,6 +1,9 @@
-const cell = document.createElement("p");
-cell.className = "cell";
-cell.id = "1";
-cell.textContent = "test";
 const chessboard = document.getElementById("chessboard");
-chessboard.append(cell);
+
+for (let i = 0; i < 64; i++) {
+    let cell = document.createElement("div");
+    cell.className = "cell"
+    cell.id = i;
+    chessboard.append(cell);
+}
+
