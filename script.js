@@ -13,3 +13,9 @@ for (let i = 0; i < 64; i++) {
 
     chessboard.append(cell);
 }
+
+const king = document.createElement("img");
+king.src = "./img/pieces/Chess_kdt45.svg";
+king.className = "white piece";
+
+document.getElementById("1").append(king);
