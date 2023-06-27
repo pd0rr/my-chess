@@ -16,6 +16,6 @@ for (let i = 0; i < 64; i++) {
 
 const king = document.createElement("img");
 king.src = "./img/pieces/Chess_kdt45.svg";
-king.className = "white piece";
+king.className = "black piece";
 
-document.getElementById("1").append(king);
+document.getElementById("4").append(king);
