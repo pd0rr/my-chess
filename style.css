@@ -1,3 +1,7 @@
+body {
+    background-color: gray;
+}
+
 #chessboard {
     display: grid;
     grid-template-columns: repeat(8, 80px);
@@ -7,5 +11,12 @@
 .cell {
     width : 80px;
     height : 80px;
+}
+
+.cell.black {
     background-color: black;
+}
+
+.cell.white {
+    background-color: white;
 }
